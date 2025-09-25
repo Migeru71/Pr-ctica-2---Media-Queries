@@ -1,0 +1,203 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#contenedor{
+    display: flex;          
+    flex-direction: column; 
+    min-height: 100vh;      
+}
+
+header, footer {
+  background-color: #6a1b9a;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  background-color: #2196f3; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+img{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.articulos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 15px;
+  margin: 5px;
+}
+
+.articulo {
+  width: 30%;
+  margin: 20px 0;
+  padding: 5px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.icono {
+  width: 50px;       
+  height: 50px;        
+  border-radius: 50%;  
+  object-fit: cover; 
+  margin: 0 auto 8px;
+}
+
+#principal {
+    flex-grow: 1;
+}
+
+
+/* 📱 Celular */
+@media (max-width: 600px) {
+  body {
+    background-color: #f0f8ff; 
+  }
+
+  header, footer {
+    background-color: #0077b6; 
+  }
+
+  /* Articulo del medio (2) */
+  .articulos .articulo:nth-child(2) {
+      background-color: #0077b6; /* Azul Fuerte */
+      color: white;
+  }
+
+  /* Articulos de los lados (1 y 3) */
+  .articulos .articulo:nth-child(odd) {
+      background-color: #90e0ef; 
+      color: #333; 
+  }
+
+  .encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    display: none; 
+  }
+
+  .articulos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .articulo {
+    width: 90%;
+    margin-bottom: 16px;
+    padding: 16px; 
+    display: flex;
+    align-items: center; 
+    text-align: left;    
+  }
+
+  .articulo .icono {
+    margin: 0 16px 0 0; 
+    flex-shrink: 0; 
+  }
+}
+
+
+/* 📲 Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    background-color: #e8f5e9; 
+  }
+
+  header, footer {
+    background-color: #2d6a4f;
+  }
+
+  /* Articulo del medio (2)*/
+  .articulos .articulo:nth-child(2) {
+      background-color: #2d6a4f; 
+      color: white;
+  }
+
+  /* Articulos impares (1 y 3) */
+  .articulos .articulo:nth-child(odd) {
+      background-color: #95d5b2;
+      color: #333; 
+  }
+
+  .encabezado {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    align-items: center;
+  }
+
+  .logo {
+    justify-self: end; 
+    width: 100px;
+    height: 100px;
+  }
+
+  .articulos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .articulo {
+    width: auto; 
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+  }
+}
+
+
+/* 💻 Laptop y escritorio */
+@media (min-width: 1025px) {
+  body {
+    background-color: #212529; 
+  }
+
+  header, footer {
+    background-color: #800f2f;
+  }
+  
+  /* Articulo del medio (2) */
+  .articulos .articulo:nth-child(2) {
+      background-color: #800f2f; 
+      color: white;
+  }
+
+  /* Articulos impares (1 y 3) */
+  .articulos .articulo:nth-child(odd) {
+      background-color: #ffb703; 
+      color: #212529; 
+  }
+
+  .articulos {
+    display: flex;
+  }
+
+  .articulo {
+    width: 30%;
+  }
+}
